@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./exm.js"defer></script>
+    <style>
+       h1{
+        background-color: lightblue;
+        padding: 10px;
+        text-align: center;
+        margin: 0;
+       }
+       h3{
+        background-color: lightblue;
+        padding: 10px;
+        text-align: center;
+        margin: 0;
+       }
+       table {
+            width: 80%;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #888;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        } 
+         ul {
+            margin-left: 20px;
+        }
+
+         input, button {
+            margin: 5px;
+            padding: 5px;
+         }
+         img{
+      width: 150px;
+      height: 150px;
+         }
+       
+ </style>
+
+</head>
+<body>
+<h1>Welcome to my website</h1>
+<h3>Advanced HTML,CSS and Javascript</h3>
+<p>Click me to change my color! This is more challenging HTML page for students.Famous quote:"Learning never exhaust the mind." Code example: console.log("Hello World")</p>
+<p>The best way to create future is to create it-Abraham Lincoln</p>
+ <img src="https://webneel.com/wallpaper/sites/default/files/images/01-2018/4-beautiful-flower-wallpaper-hd-saxyman.jpg";
+ alt="moon"
+ class="moon-img"><hr>
+ 
+  <h2>Student Data Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>20</td>
+                <td>Computer Science</td>
+            </tr>
+            <tr>
+                <td>JaneSmith</td>
+                <td>22</td>
+                <td>Information Technology</td>
+            </tr>
+            <tr>
+                <td>Sam Wilson</td>
+                <td>19</td>
+                <td>Data Analytics</td>
+            </tr>
+          </tbody>
+          </table></hr>
+
+<h2>Top Skills</h2>
+<ul id="skillsList">
+HTML
+ <li>Tags</li>
+ <li>Atteibutes</li>
+ <li>Forms</li>
+ CSS
+<li>Selectors</li>
+<li>Box models</li>
+<li>Position</li>
+Javascript
+<li>DOM</li>
+<li>Events</li>
+<li>Functions</li> 
+</ul>
+ <input type="text" id="newSkill" placeholder="Enter new skill">
+<button onclick="addSkill()">Add Skill</button><hr>
+   <h2>Contact Form</h2>
+    <form id="contactForm">
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+        <label>Email:</label>
+        <input type="email" name="email" required><br>
+        <button type="submit">Submit</button>
+    </form> <hr> 
+    <h2>Fun Zone</h2>
+    <button onclick="changeBackground()">Change Background Color</button>
+
+    <script>
+        function addSkill() {
+            let skillInput = document.getElementById("newSkill");
+            let skill = skillInput.value.trim();
+
+            if (skill) {
+                let li = document.createElement("li");
+                li.textContent = skill;
+                document.getElementById("skillsList").appendChild(li);
+                skillInput.value = "";
+            }
+        }
+        function changeBackground() {
+            document.body.style.backgroundColor =
+                document.body.style.backgroundColor === "green" ? "white" : "green";
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Form submitted successfully!");
+        });
+        
+    </script>
+</body>
+</html>
